@@ -1,0 +1,459 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITours</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/ngokevin/kframe/b07b3a0d/components/text/src/index.js"></script>
+
+</head>
+<body oncontextmenu="return false;">
+    
+    <a-scene antialiase="true">
+        <a-camera wasd-controls="acceleration:30; fly:true;" look-controls></a-camera>
+        
+        <a-assets>
+
+            <img id="hotspot" src="hotspot.png"/>
+            <audio id="background-music" src="sound2.mp3"></audio>
+            <img id="start" src="outside_maingate.jpg"/>
+            <img id="main" src="main.jpg"/>
+            <img id="boys_hostel" src="boys_hostel.jpg"/>
+            <img id="circle" src="circle.jpg"/>
+            <img id="girls_hostel2" src="girls_hostel2.jpg"/>
+            <img id="1" src="1.jpg"/>
+            <img id="2" src="2.jpg"/>
+            <img id="3" src="3.jpg"/>
+            <img id="4" src="4.jpg"/>
+            <img id="5" src="5.jpg"/>
+            <img id="6" src="6.jpg"/>
+            <img id="7" src="7.jpg"/>
+            <img id="8" src="8.jpg"/>
+            <img id="9" src="9.jpg"/>
+            <img id="turning" src="turning.jpg"/>
+            <img id="mayuri" src="mayuri.jpg"/>
+            <img id="10" src="10.jpg"/>
+            <img id="11" src="11.jpg"/>
+            <img id="12" src="12.jpg"/>
+            <img id="AB_back" src="AB_back.jpg"/>
+            <img id="13" src="13.jpg"/>
+            <img id="14" src="14.jpg"/>
+            <img id="15" src="15.jpg"/>
+            <img id="16" src="16.jpg"/>
+            <img id="17" src="17.jpg"/>
+            <img id="18" src="18.jpg"/>
+            <img id="gaming" src="gaming.jpg"/>
+            <img id="aerospace" src="aerospace.jpg"/>
+            <img id="robotics" src="robotics.jpg"/>
+        </a-assets>
+
+        <a-entity id="spots" hotspots>   
+            <a-entity id="group-outside_maingate">
+
+                <a-sky id="skybox" src="#start" rotation="0 -90 0"><a-sound src="#background-music" autoplay="true" loop="true" volume="0.3" positional="false"></a-sound></a-sky>
+                <a-image spot="linkto:#3; spotgroup:group-maingate; audioSrc:sound_indian.mp3"  position="0 1 -5">
+                </a-image>
+                <a-text font="kelsonsans" value="Focus red pointer on arrow to navigate" width="4" position="-1.4 1 -1.3"></a-text>  
+                
+                
+            </a-entity>        
+            
+            <a-entity id="group-maingate" scale="0 0 0">
+                <a-sky id="skybox" src="#6" rotation="0 -90 0" scale="-0.61 1 1"></a-sky>
+                <a-image spot="linkto:#3;spotgroup:group-CH2; audioSrc:sound_indian.mp3; stopAudio:true" position="4 1 -0.3" rotation="0 0 0">
+                    <a-text font="kelsonsans" value="Hostels" width="5" position="-0.4 -0.67 -0.5"></a-text></a-image>
+                <a-image spot="linkto:#7;spotgroup:group-front_mph; audioSrc:sound_indian.mp3; stopAudio:true" position="-4 1 -0.6" >
+                    <a-text font="kelsonsans" value="Multi-purpose" width="4" position="-0.56 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="hall" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#start;spotgroup:group-outside_maingate;audioSrc:sound_indian.mp3; stopAudio:true" position="0.082 1 4" >
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-CH2" scale="0 0 0">
+                <a-sky id="skybox" src="#3" rotation="0 -20 0"></a-sky>
+                <a-image spot="linkto:#2;spotgroup:group-CH" position="4.4 1 2.4" >
+                    <a-text font="kelsonsans" value="Chancellor's" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="residence" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>
+                <!-- <a-image spot="linkto:#4;spotgroup:group-parking" position="1.6 1 -2.843" ></a-image> -->
+                <a-image spot="linkto:#6;spotgroup:group-maingate; audioSrc:sound_indian.mp3" position="1 1 -2.843" >
+                    <a-text font="kelsonsans" value="Maingate" width="4" position="-0.4 -0.5 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-CH" scale="0 0 0" >
+                <a-sky id="skybox" src="#2" rotation="0 120 0"></a-sky>
+                <a-text font="kelsonsans" value="Chancellor's residence" width="6" position="2.1 1.1 1.3" look-at="[camera]"></a-text>
+                <a-image spot="linkto:#1; spotgroup:group-girls_hostel" position= "-0.82 1 5">
+                    <a-text font="kelsonsans" value="Hostels" width="4" position="-0.3 -0.6 0.5"></a-text></a-image>
+                <a-image spot="linkto:#3;spotgroup:group-CH2" position="-0.23 1 -6">
+                    <a-text font="kelsonsans" value="Maingate" width="5" position="-0.3 -0.6 0.5"></a-text></a-image>
+            </a-entity>
+
+            <a-entity id="group-girls_hostel" scale="0 0 0">
+               
+                <a-sky id="skybox" src="#1" rotation="0 90 0"></a-sky>
+                <a-image spot="linkto:#2; spotgroup:group-CH"  position="4.32 1 0.19112">
+                    <a-text font="kelsonsans" value="Chancellor's" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="residence" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#girls_hostel2; spotgroup:group-girls_hostel2"  position="-4.32 1 -0.19112">
+                    <a-text font="kelsonsans" value="Girls hostel" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Block 2" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>
+                <a-text font="kelsonsans" value="Girls hostel BLOCK-1" width="4" position="0.62 1 1.73" rotation="0 179.5 -0.16"></a-text>    
+                
+            </a-entity>
+
+             <a-entity id="group-girls_hostel2" scale="0 0 0">
+               
+                <a-sky id="skybox" src="#girls_hostel2" rotation="0 0 0"></a-sky>
+                <a-image spot="linkto:#1; spotgroup:group-girls_hostel"  position="-1 1 4">
+                    <a-text font="kelsonsans" value="Girls-hostel" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Block 1" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#circle; spotgroup:group-circle"  position="-0.2 1 -4 ">
+                    <a-text font="kelsonsans" value="Boys" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Hostel" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>
+                <a-text font="kelsonsans" value="Girls hostel BLOCK-2" width="4" position="-2 1 0.8" rotation="0 90 0"></a-text>    
+                
+            </a-entity>
+
+            <a-entity id="group-circle" scale="0 0 0">
+                <a-sky id="skybox" src="#circle" rotation="0 180 0"></a-sky>
+                <a-image spot="linkto:#girls_hostel2; spotgroup:group-girls_hostel2"  position="-4 1 -0.8">
+                    <a-text font="kelsonsans" value="Girls" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="hostels" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#boys_hostel; spotgroup:group-boys_hostel"  position="4 1 -0.3">
+                    <a-text font="kelsonsans" value="Boys" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="hostels" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>                
+            </a-entity>
+
+            <a-entity id="group-boys_hostel" scale="0 0 0">
+               
+                <a-sky id="skybox" src="#boys_hostel" rotation="0 180 0"></a-sky>
+                <a-image spot="linkto:#circle; spotgroup:group-circle"  position="0.96839 1.07 -4.11339">
+                    <a-text font="kelsonsans" value="Girls" width="4" position="-0.4 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="hostels" width="4" position="-0.4 -0.7 0.6"></a-text>
+                </a-image>                 
+                <a-text font="kelsonsans" value="Boys hostel BLOCK-1" width="4" position="1.94711 1 -0.72661" rotation="0 -90 0" text=""></a-text>
+            </a-entity>
+ 
+ 
+            <a-entity id="group-front_mph" scale="0 0 0">
+                <a-sky id="skybox" src="#7" rotation="0 10 0"></a-sky>
+                <a-image spot="linkto:#6;spotgroup:group-maingate;audioSrc:sound_indian.mp3" position="6 1 -1" >
+                    <a-text font="kelsonsans" value="Maingate" width="4" position="-0.4 -0.5 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#8;spotgroup:group-mph" position="0.082 1 6">
+                    <a-text font="kelsonsans" value="Multi-purpose" width="4" position="-0.56 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="hall (MPH)" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#turning;spotgroup:group-turning" position="-6 1 1" >
+                    <a-text font="kelsonsans" value="Academic" width="4" position="-0.3 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Block" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                </a-entity>
+
+            <a-entity id="group-mph" scale="0 0 0">
+                <a-sky id="skybox" src="#8" rotation="0 -90 0"></a-sky>
+                <a-image spot="linkto:#7;spotgroup:group-front_mph" position="7 1 0.8"></a-image>
+            </a-entity>
+
+            <a-entity id="group-turning" scale="0 0 0">
+                <a-sky id="skybox" src="#turning" rotation="0 0 0"></a-sky>
+                <a-image spot="linkto:#7;spotgroup:group-front_mph" position="1.73388 1 -4.54">
+                    <a-text font="kelsonsans" value="Multi-purpose" width="4" position="-0.56 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="hall (MPH)" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#9;spotgroup:group-front_mayuri" position="-5.168 1 -0.47" >
+                    <a-text font="kelsonsans" value="Food-court" width="4" position="-0.4 -0.5 0.6"></a-text>
+                </a-image>
+                </a-entity>
+
+            <a-entity id="group-front_mayuri" scale="0 0 0">
+                <a-sky id="skybox" src="#9" rotation="0 100 0"></a-sky>
+                <a-image spot="linkto:#turning;spotgroup:group-turning" position="4 1 1" >
+                    <a-text font="kelsonsans" value="Multi-purpose" width="4" position="-0.56 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="hall" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#10;spotgroup:group-ABfront" position="-4 1 -1">
+                    <a-text font="kelsonsans" value="Academic" width="4" position="-0.3 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Block" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#mayuri;spotgroup:group-mayuri" position="0.7 1 4">
+                    <a-text font="kelsonsans" value="Architecture" width="4" position="-0.56 -0.55 0.6"></a-text>
+                    <a-text font="kelsonsans" value="building" width="4" position="-0.34399 -0.72215 0.54685"></a-text>
+                </a-image>
+                <a-text font="kelsonsans" value="Food-court" width="4" position="2 1.4 1.7" rotation="0 -180 1.4" ></a-text>
+            </a-entity>
+
+            <a-entity id="group-mayuri" scale="0 0 0">
+                <a-sky id="skybox" src="#mayuri" rotation="0 80 0"></a-sky>
+                <a-image spot="linkto:#9;spotgroup:group-front_mayuri" position="2.4 1 -4">
+                </a-image>
+                <a-image spot="linkto:#14;spotgroup:group-front_Arch" position="-0.74695 1 4">
+                    <a-text font="kelsonsans" value="Architecture" width="4" position="-0.56 -0.55 0.6"></a-text>
+                    <a-text font="kelsonsans" value="building" width="4" position="-0.34399 -0.72215 0.54685" text=""></a-text>
+                </a-image>
+                
+            </a-entity>
+ 
+            <a-entity id="group-ABfront" scale="0 0 0">
+                <a-sky id="skybox" src="#10" rotation="0 0 0"></a-sky>
+                <a-image spot="linkto:#11;spotgroup:group-reception" position="-7 1 0.5" >
+                    <a-text font="kelsonsans" value="Academic" width="4" position="-0.3 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Block" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#9;spotgroup:group-front_mayuri" position="3 1 7">
+                    <a-text font="kelsonsans" value="Canteen" width="4" position="-0.4 -0.5 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-reception" scale="0 0 0">
+                <a-sky id="skybox" src="#11" rotation="0 0 0"></a-sky>
+                <a-image spot="linkto:#10;spotgroup:group-ABfront" position="1 1 5" >
+                    <a-text font="kelsonsans" value="Canteen" width="4" position="-0.4 -0.5 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#12;spotgroup:group-ABback" position="-0.2 1 -5" >
+                    <a-text font="kelsonsans" value="Auditorium" width="4" position="-0.4 -0.6 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-ABback" scale="0 0 0">
+                <a-sky id="skybox" src="#12" rotation="0 -80 0"></a-sky>
+                <a-image spot="linkto:#11;spotgroup:group-reception" position="-6 1 0" >
+                    <a-text font="kelsonsans" value="Reception" width="4" position="-0.56 -0.5 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#13;spotgroup:group-Auditorium" position="-1 1 -6" >
+                    <a-text font="kelsonsans" value="Auditorium" width="4" position="-0.4 -0.6 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#AB_backside;spotgroup:group-AB_backside" position="5 1 -3" >
+                    <a-text font="kelsonsans" value="AB" width="4" position="0 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Backside" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-Auditorium" scale="0 0 0">
+                <a-sky id="skybox" src="#13" rotation="0 -90 0"></a-sky>
+                <a-image spot="linkto:#12;spotgroup:group-ABback" position="0 1 6" ></a-image>
+            </a-entity>
+             
+            <a-entity id="group-AB_backside" scale="0 0 0">
+                <a-sky id="skybox" src="#AB_back" rotation="0 45 0"></a-sky>
+                <a-image spot="linkto:#12;spotgroup:group-ABback" position="6 1 0.8" >
+                    <a-text font="kelsonsans" value="Auditorium" width="4" position="-0.56 -0.5 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#11;spotgroup:group-front_Arch" position="-4.5 1 4.5" >
+                    <a-text font="kelsonsans" value="Architecture" width="4" position="-0.56 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="building" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-front_Arch" scale="0 0 0">
+                <a-sky id="skybox" src="#14" rotation="0 90 0"></a-sky>
+                <a-image spot="linkto:#mayuri;spotgroup:group-mayuri" position="7 1 2" >
+                    <a-text font="kelsonsans" value="Food-court" width="4" position="2 1.4 1.7" rotation="0 -180 1.4" ></a-text>
+                </a-image>
+                <a-image spot="linkto:#AB_back;spotgroup:group-AB_backside" position="5 1 -4" >
+                    <a-text font="kelsonsans" value="Academic" width="4" position="-0.3 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Block" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#15;spotgroup:group-LC_front" position="-5 1 -1.5" >
+                    <a-text font="kelsonsans" value="Lab" width="4" position="-0.13 -0.56 0.59"></a-text>
+                    <a-text font="kelsonsans" value="Complex" width="4" position="-0.34 -0.73 0.6"></a-text>
+                </a-image>
+                <a-text font="kelsonsans" value="Architecture building" width="4" position="2 1.4 1.7" rotation="0 -180 1.4" ></a-text>
+                <a-text font="kelsonsans" value="Lab Complex" width="4" position="-0.7 1.5 0.7" rotation="0 -210 -1.4" ></a-text>
+            </a-entity>
+
+            <a-entity id="group-LC_front" scale="0 0 0">
+                <a-sky id="skybox" src="#15" rotation="0 70 0"></a-sky>
+                <a-image spot="linkto:#14;spotgroup:group-front_Arch" position="5 1 2" >
+                    <a-text font="kelsonsans" value="Architecture" width="4" position="-0.56 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="building" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#16;spotgroup:group-LC_1" position="-2 1.4 5" >
+                    <a-text font="kelsonsans" value="Lab" width="6" position="-0.27 -0.56 0.59"></a-text>
+                    <a-text font="kelsonsans" value="Complex" width="6" position="-0.58 -0.8 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#18;spotgroup:group-parking" position="-5 1 -2" >
+                    <a-text font="kelsonsans" value="Parking/" width="4" position="-0.56 -0.5 0.6"></a-text>
+                    <a-text font="kelsonsans" value="Maingate" width="4" position="-0.19 -0.7 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-LC_1" scale="0 0 0">
+                <a-sky id="skybox" src="#16" rotation="0 -150 0"></a-sky>
+                <a-image spot="linkto:#15;spotgroup:group-LC_front" position="6 1 -5" ></a-image>
+                <a-image spot="linkto:#17;spotgroup:group-LC" position="-4.5 1 4.5" ></a-image>
+            </a-entity>
+            <a-entity id="group-LC" scale="0 0 0">
+                <a-sky id="skybox" src="#17" rotation="-1 -100 0"></a-sky>
+                <a-image spot="linkto:#16;spotgroup:group-LC_1" position="1.8 1 -6" ></a-image>
+                <a-image spot="linkto:#aerospace;spotgroup:group-LC_aero" position="6 1 -0.8" >
+                    <a-text font="kelsonsans" value="Aerospace" width="6" position="-0.6 -0.56 0.59"></a-text>
+                    <a-text font="kelsonsans" value="Lab" width="6" position="-0.2 -0.8 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#gaming;spotgroup:group-LC_gaming" position="-2 1 -6" >
+                    <a-text font="kelsonsans" value="Gaming" width="6" position="-0.54766 -0.6422 0.50782"></a-text>
+                    <a-text font="kelsonsans" value="Lab" width="6" position="-0.25 -0.88 0.6"></a-text>
+                </a-image>
+                <a-image spot="linkto:#robotics;spotgroup:group-LC_robotics" position="-4 1 -1.8" >
+                    <a-text font="kelsonsans" value="Robotics" width="6" position="-0.4 -0.56 0.59"></a-text>
+                    <a-text font="kelsonsans" value="Lab" width="6" position="-0.2 -0.8 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+            <a-entity id="group-LC_aero" scale="0 0 0">
+                <a-sky id="skybox" src="#aerospace" rotation="0 -100 0"></a-sky>
+                <a-image spot="linkto:#17;spotgroup:group-LC" position="1.1 1 6" ></a-image>
+            </a-entity>
+
+            <a-entity id="group-LC_gaming" scale="0 0 0">
+                <a-sky id="skybox" src="#gaming" rotation="0 -100 0"></a-sky>
+                <a-image spot="linkto:#17;spotgroup:group-LC" position="0 1 -6" ></a-image>
+            </a-entity>
+
+            <a-entity id="group-LC_robotics" scale="0 0 0">
+                <a-sky id="skybox" src="#robotics" rotation="0 -60 0"></a-sky>
+                <a-image spot="linkto:#17;spotgroup:group-LC" position="0 1 5" ></a-image>
+            </a-entity>
+            
+           <a-entity id="group-parking" scale="0 0 0">
+                <a-sky id="skybox" src="#18" rotation="0 -90 0"></a-sky>
+                <a-image spot="linkto:#15;spotgroup:group-LC_front" position="0.4 1 4" >
+                    <a-text font="kelsonsans" value="Lab" width="6" position="-0.27 -0.56 0.59"></a-text>
+                    <a-text font="kelsonsans" value="Complex" width="6" position="-0.58 -0.8 0.6"></a-text>
+                </a-image>
+            </a-entity>
+
+        <a-entity id="cam" camera position="0 1.6 0" look-controls>
+            <a-entity cursor="fuse:true;fuseTimeout:2000"
+                      geometry="primitive:ring;radiusInner:0.01;radiusOuter:0.02"
+                      position="0 0 -1.8"
+                      material="shader:flat;color:#ff0000"
+                      animation__mouseenter="property:scale;to:3 3 3;startEvents:mouseenter;endEvents:mouseleave;dir:reverse;dur:2000;loop:1">
+                    </a-entity>
+        </a-entity>
+        
+  
+    <script>
+        AFRAME.registerComponent('hotspots', {
+            init: function () {
+                this.el.addEventListener('reloadspots', function (evt) {
+                    var currspotgroup = document.getElementById(evt.detail.currspots);
+                    currspotgroup.setAttribute("scale", "0 0 0");
+                    
+                    var newspotgroup = document.getElementById(evt.detail.newspots);
+                    newspotgroup.setAttribute("scale", "1 1 1");
+                });
+            }
+        });
+        
+        // AFRAME.registerComponent('spot', {
+        //     schema: {
+        //         linkto: { type: "string", default: "" },
+        //         spotgroup: { type: "string", default: "" }
+        //     },
+        //     init: function () {
+        //         this.el.setAttribute("src", "#hotspot");
+        //         this.el.setAttribute("look-at", "#cam");
+                
+        //         var data = this.data;
+                
+        //         this.el.addEventListener('click', function () {
+        //             var sky = document.getElementById("skybox");
+        //             sky.setAttribute("src", data.linkto);
+                    
+        //             var spotcomp = document.getElementById("spots");
+        //             var currspots = this.parentElement.getAttribute("id");
+        //             spotcomp.emit('reloadspots', { newspots: data.spotgroup, currspots: currspots });
+        //         });
+        //     }
+        // });
+
+        AFRAME.registerComponent('spot', {
+        schema: {
+            linkto: { type: "string", default: "" },
+            spotgroup: { type: "string", default: "" },
+            audioSrc: { type: "string", default: "" },
+            stopAudio: { type: "boolean", default: false } // Add schema for stopping audio
+        },
+        init: function () {
+            this.el.setAttribute("src", "#hotspot");
+            this.el.setAttribute("look-at", "#cam");
+            
+            var data = this.data;
+            
+            this.el.addEventListener('click', function () {
+                var sky = document.getElementById("skybox");
+                sky.setAttribute("src", data.linkto);
+                
+                var spotcomp = document.getElementById("spots");
+                var currspots = this.parentElement.getAttribute("id");
+                spotcomp.emit('reloadspots', { newspots: data.spotgroup, currspots: currspots });
+
+                // Check if audioSrc is provided and not empty
+                if (data.audioSrc) {
+                    var backgroundMusic = document.querySelector('#background-music');
+                    backgroundMusic.setAttribute("src", data.audioSrc); // Change audio source
+                    backgroundMusic.play(); // Play the sound
+
+                    // Check if stopAudio is true
+                    if (data.stopAudio) {
+                        // Wait for a short duration before stopping the audio to allow it to start playing
+                        setTimeout(function() {
+                            backgroundMusic.pause(); // Pause the sound
+                        }, 100);
+                    }
+                }
+            });
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key == 'F12') {
+                event.preventDefault();
+            }
+        });
+
+    </script>
+<script>
+    // Check if the user has interacted before
+    var hasInteracted = localStorage.getItem('hasInteracted');
+
+    // If the user has not interacted before, add a click event listener
+    if (!hasInteracted) {
+        document.addEventListener('click', function() {
+            // Play the audio
+            var backgroundMusic = document.querySelector('#background-music');
+            backgroundMusic.play();
+
+            // Set a flag indicating that the user has interacted
+            localStorage.setItem('hasInteracted', true);
+        });
+    }
+</script>
+
+
+</body>
+</html> 
+
+
+
+
+ 
